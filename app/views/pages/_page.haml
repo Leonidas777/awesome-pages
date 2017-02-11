@@ -1,0 +1,12 @@
+%h2= page.title
+
+%p= page.description
+
+%span Subpages
+- if page.children.any?
+  %ul
+  - page.children.each do |page|
+    %li
+      = link_to page.title, nested_page_path(page)
+- else
+  %span There is no subpages yet.
