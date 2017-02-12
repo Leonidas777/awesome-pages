@@ -1,6 +1,6 @@
-= simple_form_for @page, url: '/pages' do |f|
+= simple_form_for page, url: url do |f|
   = f.input :name
   = f.input :title
   = f.input :description, as: :text
-  = f.hidden_field :parent_id, value: @page.parent.slug
+  = f.hidden_field :parent_slug, value: slug_of(page.parent)
   = f.submit 'Save'

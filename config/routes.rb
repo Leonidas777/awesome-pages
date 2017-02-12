@@ -4,14 +4,22 @@ AwesomePages::Application.routes.draw do
 
   root to: 'pages#index'
 
+  get '/add', to: 'pages#new'
+  post '/pages', to: 'pages#create'
+  get '*id/add', to: 'pages#new'
+  get '*id/edit', to: 'pages#edit'
+  get '*id', to: 'pages#show'
+  # delete '*id', to: 'pages#destroy'
+  
+
+  get '/add', to: 'pages#new'
+
   # resources :pages
   resources :pages, path: '', path_names: { new: 'add' }
   # resources :pages, path: ''
   # get '*id', to: :index, controller: 'pages'
-  # get '*id', to: 'pages#show'
-  get '*id/add', to: 'pages#new'
+  
 
-  post "/pages", to: 'pages#create'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

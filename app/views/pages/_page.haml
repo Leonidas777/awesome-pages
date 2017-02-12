@@ -1,12 +1,15 @@
 %h2= page.title
 
-%p= page.description
+%p= parse_description_of(page).html_safe
+
+.action-buttons
+  = link_to 'Add new page', add_page_to(page)
+  = link_to 'Edit page', edit_page(page)
+  / = link_to 'Delete page', nested_page_path(page), method: :delete
+
 
 %span Subpages
 - if page.children.any?
-  %ul
-  - page.children.each do |page|
-    %li
-      = link_to page.title, nested_page_path(page)
+  = render 'collection', page: page
 - else
   %span There is no subpages yet.

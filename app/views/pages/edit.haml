@@ -1,2 +1,3 @@
 %h1 Update the page
-render 'form', page: page
+= link_to 'Back to show', nested_page_path(@page)
+= render 'form', page: @page, url: page_path(@page)
