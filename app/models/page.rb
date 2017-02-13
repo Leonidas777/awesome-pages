@@ -17,6 +17,8 @@ class Page < ActiveRecord::Base
   end
 
   def generate_slug
+    return if name.blank?
+
     translited_name = Russian::transliterate(name)
     self.slug = translited_name.parameterize
   end

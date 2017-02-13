@@ -2,4 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  pages:
+    create: 'Page has been successfully created.'
+    update: 'Page has been updated.'
+    delete: 'Page has been deleted.'
+
+  errors:
+    pages:
+      not_found:      'Page has not been found.'
+      without_parent: 'Parent for page has not been received.'

@@ -3,8 +3,8 @@ development: &development
   encoding: unicode
   database: awesome_pages_development
   pool: 100
-  username: leonid
-  password: 11111
+  username: user_name
+  password: user_password
   host: localhost
   min_messages: WARNING
   insert_returning: false
@@ -15,4 +15,4 @@ test:
 
 production:
   <<: *development
-  database: awesome_pages_production  
+  database: awesome_pages_production

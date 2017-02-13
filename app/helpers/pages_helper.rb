@@ -3,14 +3,6 @@ module PagesHelper
     '/' + (page.ancestors + [page]).map(&:to_param).join('/')
   end
 
-  def add_page_to(page)
-    nested_page_path(page) + '/add'
-  end
-
-  def edit_page(page)
-    nested_page_path(page) + '/edit'
-  end
-
   def slug_of(page)
     page.present? ? page.slug : ''
   end

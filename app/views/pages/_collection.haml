@@ -2,5 +2,5 @@
   %ul
     - page.children.each do |page|
       %li
-        = link_to page.title, nested_page_path(page)
+        = link_to page.title, show_page_path(page)
         = render 'collection', page: page
